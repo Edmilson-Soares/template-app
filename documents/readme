@@ -1,0 +1,19 @@
+## https://vitest.dev/guide/features.html
+
+
+
+# await system.plugins('services').service('app::index.index').execute({})
+
+# await system.plugins('dbs').db('app::prisma.create').execute('user', {
+#            data: {
+#                email: 'eeeee',
+#                name: 'dddd'
+#            }
+#       })
+
+
+command:{ services, forawait, entities, dbs, libs, rx }
+
+
+
+    console.log(system.plugins('db').model('infra::create').execute)

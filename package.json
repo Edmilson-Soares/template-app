@@ -1,0 +1,40 @@
+{
+    "name": "framework",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "test": "vitest",
+        "test:dev": "vitest watch",
+        "dev": "nodemon bin/index.js",
+        "start": "node bin/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@prisma/client": "^4.11.0",
+        "amqplib": "^0.10.3",
+        "bcrypt-nodejs": "^0.0.3",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "cron": "^2.1.0",
+        "crypto-js": "^4.1.1",
+        "dayjs": "^1.11.7",
+        "dotenv": "^16.0.1",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "fastify": "^4.14.0",
+        "jsonwebtoken": "^8.5.1",
+        "redis": "^4.6.5",
+        "rxjs": "^7.8.0",
+        "socket.io": "^4.6.1",
+        "worker-thread": "^1.1.0",
+        "zod": "^3.20.6"
+    },
+    "devDependencies": {
+        "prisma": "^4.11.0",
+        "vitest": "^0.29.2"
+    }
+}
