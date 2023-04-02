@@ -7,9 +7,6 @@ export default async({ file, path, z, controllers, middlewares, auth, fileRouter
             import (file_)
             const { route } = router.default({ file: file.split('.js')[1], z, path })
             route.handler = controllers.controller('app::' + route.handler).handler
-                // route.auth = auth(route.auth).auth
-
-            //console.log(route.auth)
             route.middlewares = middlewares(route.middlewares)
             return {
                 route

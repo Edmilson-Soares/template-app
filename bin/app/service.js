@@ -1,4 +1,4 @@
-export default async({ file, path, forawait, libs, commands, dbs, entities, rx, services, fileService }) => {
+export default async({ file, path, forawait, libs, commands, db, dbs, entities, rx, services, fileService }) => {
 
     if (file.includes('.js')) {
         const file_ = `./../../${fileService}/${path}/${file}`
@@ -7,7 +7,7 @@ export default async({ file, path, forawait, libs, commands, dbs, entities, rx, 
             import (file_)
             return {
                 name: 'app::' + path + '.' + file.split('.js')[0],
-                fn: service.default({ commands, forawait, libs, services, rx, dbs, entities })
+                fn: service.default({ commands, forawait, libs, db, services, rx, dbs, entities })
             }
         } catch (error) {
             console.log(error)

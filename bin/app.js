@@ -154,6 +154,8 @@ export default ({ service, command, http, lib, job, event, db, entity, controlle
 
         }, {})
 
+        plugins.libs['forawait'] = forawait
+
         await forawait.generate(paths.entity, async(path) => {
             await forawait.generate(fs.readdirSync(files.entities + '/' + path), async(file) => {
                 const { name, fn } = await entity({ path, z: plugins.libs.z, libs: plugins.libs, file, fileEntity: files.entities })
@@ -183,6 +185,11 @@ export default ({ service, command, http, lib, job, event, db, entity, controlle
                     path,
                     file,
                     rx,
+                    db: {
+                        model: (name) => {
+                            return plugins.db[name]
+                        }
+                    },
                     services: {
                         service: function(name) {
                             return plugins.services[name]
